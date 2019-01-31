@@ -101,7 +101,7 @@ while True:
     try:
         while (choice < 1) or (choice > 3):
             print('please type a number between 1 and 3')
-            choice = int(input('What is your choice?'))
+            choice = int(input('What is your choice?')) #On the console try to type a letter to check if the message "please, type a number" will appear on the console.
         break
     except ValueError:
         print('please, type a number')
@@ -114,19 +114,26 @@ elif choice == 3:
     print('London')
 
 
-#try:
-#    while choice < 1 or choice > 3:
-#        print('please type a number between 1 and 3')
-#        choice = int(input('What is your choice?'))
-#     
-#except ValueError:
-#    print('please, type a number')
-#    choice = int(input('What is your choice?'))
-#       
-#else:
-#    if choice == 1:
-#        print('Ms Wu')
-#    elif choice == 2:
-#        print('5 years old')
-#    elif choice == 3: 
-#        print('London')
+
+#--------------------------------------------
+# Task 07 - Class-based user input validation
+#--------------------------------------------
+    
+class Spam(object):
+#    def __init__(self, description, value):
+#        if not description or value <=0: 
+#            raise ValueError
+#        self.description = description
+#        self.value = value
+        
+    def __init__(self, description, value): 
+        assert description != ""
+        assert value > 0
+        self.description = description 
+        self.value = value     
+        
+number = int(input("Please, enter spam description: "))
+s = Spam('s', number)
+print(s.value)
+
+         
