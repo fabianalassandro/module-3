@@ -4,7 +4,7 @@ Created on Tue Dec 11 13:55:47 2018
 
 @author: 612383423
 """
-### Chapter 8: Mobile Data Bundle purchase program
+### Mobile Data Bundle purchase program (from Module 2 chapter 8) with exceptions and validations
 
 def DataBundlePurchase(truePasscode, balance):
     counter = 0
