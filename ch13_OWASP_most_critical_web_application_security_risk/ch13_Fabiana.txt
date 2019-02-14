@@ -1,0 +1,61 @@
+OWASP
+The 10 Most Critical Web Application Security Risk
+
+Below a list of the ten most common threats to being aware to guarantee web application security; the author of the list is the OWASP Foundation, an open community working on building awareness, tools and documentation about application security.
+
+1. Injection
+2. Broken Authentication
+3. Sensitive Data Exposure
+4. XML External Entities
+5. Broken Access Control
+6. Security Misconfiguration
+7. Cross-Site Scripting
+8. Insecure Deserialization
+9. Using Components with Known Vulnerabilities
+10. Insufficient logging and monitoring
+
+..........
+IN DETAILS
+..........
+
+
+1. Injection
+An injection happens when someone is trying to access a database by sending unauthorised data. This kind of attack could be made using the input fields of the form by trying to trick them. Here an example:
+
+    Step 1: Enter xxx@xxx.xxx as the email address
+    Step 2: Enter xxx') OR 1 = 1 -- ]
+
+In the article SQL Injection Tutorial: Learn with Example (https://www.guru99.com/learn-sql-injection-with-practical-example.html) it's possible to see how it works in detail.
+
+Another kind of injection is by using a query directly on the address bar of the browser and adding the username and password parameters at the end of the URL of the login page. Below an example:
+
+http://example.com/app/accountView?id='or '1'='1
+
+A more extensive explanation about how it works this kind of attack is on the last version of the document "OWASP Top 10 - 2017" on the chapter "A1:2017 - Injection".
+
+---
+How to prevent
+-
+Prevent this kind of attack seems quite complex to me. By reading the documentation, OWASP suggests using a safe API. What's a safe API? Google Developers has two online tools available for free to check if an API is safe: Lookup API (https://developers.google.com/safe-browsing/v4/lookup-api) or Update API (https://developers.google.com/safe-browsing/v4/update-api)
+
+
+2. Broken Authentication
+Broken Authentication is an automated attack involving trying to access by using a list of millions of usernames combined with a list of the most common password. The attacker's strategy here is based on statistical probability and keep trying on a massive scale until finding the right combination.
+
+---
+How to prevent
+-
+  ° The usage of a captcha is one of the most common ways to avoid this kind of attack.
+  ° Guiding the users in creating a more complex password. For example by asking for a minimum length, including special characters, numbers and capital letters.
+  ° Set a maximum of attempts for failed attempts or disallow temporary access to the login form or page. For example, this last method is used by Wordpress in the admin login page.
+
+
+..........
+References
+..........
+
+  ° SQL Injection Tutorial: Learn with Example (https://www.guru99.com/learn-sql-injection-with-practical-example.html)
+
+  ° OWASP Top 10 -2017 (https://www.owasp.org/images/7/72/OWASP_Top_10-2017_%28en%29.pdf.pdf)
+
+  ° Google Safe Browsing (https://developers.google.com/safe-browsing/v4/)
